@@ -79,7 +79,7 @@ body {
 
 .container.hover_right .split.left {
   width: 25%;
-  background-image: url("rightbg.png"); /* changes left bg on hover right */
+  background-image: url("rightbg.PNG"); /* changes left bg on hover right */
 }
 .container.hover_right .split.right {
   width: 75%;
