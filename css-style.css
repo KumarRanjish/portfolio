@@ -1,0 +1,146 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap");
+
+/* RESET */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  outline: none;
+  box-sizing: border-box;
+  font-family: "Roboto", sans-serif;
+}
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+}
+
+body {
+  overflow: hidden;
+}
+
+/* FULL SCREEN CONTAINER */
+.container {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
+
+/* SPLIT PANELS */
+.split {
+  position: absolute;
+  top: 0;
+  height: 100vh;
+  width: 50%;
+  overflow: hidden;
+
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+
+  transition: width 1000ms ease-in-out;
+}
+
+/* LEFT */
+.split.left {
+  left: 0;
+
+  /* fallback color if image doesn't load */
+  background-color: #e6e6e6;
+
+  /* your image */
+  background-image: url("left.png");
+  background-position: right center;
+}
+
+/* RIGHT */
+.split.right {
+  right: 0;
+
+  /* fallback color if image doesn't load */
+  background-color: #cfcfcf;
+
+  /* your image */
+  background-image: url("right.png");
+  background-position: left center;
+}
+
+/* HOVER EFFECT (expand) */
+.container.hover_left .split.left {
+  width: 75%;
+}
+.container.hover_left .split.right {
+  width: 25%;
+  background-image: url("leftbg.png"); /* changes right bg on hover left */
+}
+
+.container.hover_right .split.left {
+  width: 25%;
+  background-image: url("rightbg.png"); /* changes left bg on hover right */
+}
+.container.hover_right .split.right {
+  width: 75%;
+}
+
+/* TEXT */
+.split h1 {
+  position: absolute;
+  top: 20%;
+  left: 50%;
+  transform: translateX(-50%);
+
+  font-size: 4rem;
+  font-weight: 700;
+  color: #000;
+  white-space: nowrap;
+  text-transform: capitalize;
+
+  background: rgba(255, 255, 255, 0.35);
+  padding: 8px 14px;
+  border-radius: 14px;
+}
+
+/* BUTTON */
+.split .btn {
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translateX(-50%);
+
+  padding: 1.5rem;
+  width: 15rem;
+
+  text-decoration: none;
+  text-align: center;
+  text-transform: uppercase;
+
+  border: 1px solid #000;
+  color: #000;
+  border-radius: 20px;
+
+  cursor: pointer;
+  background: rgba(255, 255, 255, 0.5);
+  box-shadow: 0px 10px 10px -5px rgba(0, 0, 0, 0.3);
+  transition: all 0.3s ease;
+}
+
+.split .btn:hover {
+  background: rgb(31, 31, 31);
+  color: #fff;
+  box-shadow: 0px 10px 10px -5px rgba(0, 0, 0, 0.8);
+}
+
+/* MOBILE */
+@media (max-width: 700px) {
+  .split h1 {
+    font-size: 40px;
+  }
+
+  .split .btn {
+    padding: 1rem;
+    width: 10rem;
+  }
+}

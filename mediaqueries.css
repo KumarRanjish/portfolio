@@ -1,0 +1,56 @@
+@media screen and (max-width: 1200px) {
+  section {
+    margin: 0 4rem;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  #desktop-nav {
+    display: none;
+  }
+  #hamburger-nav {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 12vh;
+  }
+
+  section {
+    margin: 0 2rem;
+  }
+
+  #profile {
+    flex-direction: column;
+    gap: 2rem;
+    height: auto;
+    padding: 2rem 0;
+  }
+
+  .section__pic-container {
+    width: 260px;
+    height: 260px;
+  }
+
+  .title {
+    font-size: 2.2rem;
+  }
+
+  .nav-links {
+    font-size: 1.2rem;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .btn {
+    width: 9rem;
+    padding: 0.8rem;
+  }
+
+  .project-bullets {
+    max-width: 100%;
+  }
+
+  .contact-info-upper-container {
+    flex-direction: column;
+  }
+}
